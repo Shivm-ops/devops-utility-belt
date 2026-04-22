@@ -1,65 +1,50 @@
 import { Wrench, FileJson, Clock, Cloud } from "lucide-react";
-import { EnvBadge } from "@/components/EnvBadge";
-import { ToolCard } from "@/components/ToolCard";
-import { YamlToJson } from "@/components/YamlToJson";
-import { CronExplainer } from "@/components/CronExplainer";
-import { CloudCostCalculator } from "@/components/CloudCostCalculator";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <main className="relative min-h-screen px-4 py-8 sm:px-6 sm:py-12 lg:px-10">
-      <div className="mx-auto max-w-7xl">
-        <header className="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 ring-1 ring-primary/20">
-              <Wrench className="h-3.5 w-3.5 text-primary" />
-              <span className="text-xs font-medium text-primary">DevOps Utility Belt</span>
-            </div>
-            <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Ship faster with the <span className="text-gradient">essentials</span>.
-            </h1>
-            <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
-              YAML→JSON, cron parsing, AWS cost estimates, and live environment detection — all in one glass.
-            </p>
+    <div className="space-y-12">
+      <header className="flex flex-col gap-4 text-center max-w-3xl mx-auto py-10">
+        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+          Ship faster with the <span className="text-gradient">essentials</span>.
+        </h1>
+        <p className="mt-4 text-lg text-muted-foreground">
+          Your all-in-one DevOps Utility Belt. Select a tool below to get started.
+        </p>
+      </header>
+
+      <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+        <Link to="/yaml-json" className="group relative rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:shadow-glow hover:-translate-y-1">
+          <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-primary/10 p-3 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+            <FileJson className="h-6 w-6" />
           </div>
-          <EnvBadge />
-        </header>
+          <h2 className="text-xl font-bold mb-2">YAML → JSON</h2>
+          <p className="text-sm text-muted-foreground">
+            Convert YAML manifests to JSON instantly with live syntax validation.
+          </p>
+        </Link>
 
-        <div className="grid gap-5 lg:grid-cols-2 xl:gap-6">
-          <ToolCard
-            icon={FileJson}
-            title="YAML → JSON Converter"
-            description="Paste YAML, get pretty JSON. Live validation."
-            className="lg:col-span-2"
-            accent="primary"
-          >
-            <YamlToJson />
-          </ToolCard>
+        <Link to="/cron" className="group relative rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:shadow-glow hover:-translate-y-1">
+          <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-accent/10 p-3 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+            <Clock className="h-6 w-6" />
+          </div>
+          <h2 className="text-xl font-bold mb-2">Cron Explainer</h2>
+          <p className="text-sm text-muted-foreground">
+            Decode standard 5-part cron expressions into plain English.
+          </p>
+        </Link>
 
-          <ToolCard
-            icon={Clock}
-            title="Cron Schedule Explainer"
-            description="Decode 5-part cron expressions into plain English."
-            accent="accent"
-          >
-            <CronExplainer />
-          </ToolCard>
-
-          <ToolCard
-            icon={Cloud}
-            title="Cloud Cost Calculator"
-            description="Estimate monthly AWS EC2 spend by instance type."
-            accent="secondary"
-          >
-            <CloudCostCalculator />
-          </ToolCard>
-        </div>
-
-        <footer className="mt-10 text-center text-xs text-muted-foreground/60">
-          Built for engineers · client-side only · no data leaves your browser
-        </footer>
+        <Link to="/cloud-cost" className="group relative rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:shadow-glow hover:-translate-y-1">
+          <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-secondary/10 p-3 text-secondary group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors">
+            <Cloud className="h-6 w-6" />
+          </div>
+          <h2 className="text-xl font-bold mb-2">Cloud Cost Calc</h2>
+          <p className="text-sm text-muted-foreground">
+            Estimate your monthly AWS EC2 spend across different instances.
+          </p>
+        </Link>
       </div>
-    </main>
+    </div>
   );
 };
 
