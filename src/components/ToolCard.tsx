@@ -24,7 +24,7 @@ export const ToolCard = ({ icon: Icon, title, description, children, className =
         <Icon className="h-5 w-5 text-primary" />
       </div>
       <div className="min-w-0">
-        <h2 className="text-base font-semibold text-foreground sm:text-lg">{title}</h2>
+        <h2 className="font-display text-base font-semibold text-foreground sm:text-lg">{title}</h2>
         <p className="text-xs text-muted-foreground sm:text-sm">{description}</p>
       </div>
     </header>

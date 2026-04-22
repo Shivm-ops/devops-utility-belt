@@ -64,7 +64,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'ui-monospace', 'monospace'],
       },
       backgroundImage: {
