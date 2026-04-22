@@ -15,7 +15,7 @@ const Index = () => {
               <Wrench className="h-3.5 w-3.5 text-primary" />
               <span className="text-xs font-medium text-primary">DevOps Utility Belt</span>
             </div>
-            <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
+            <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               Ship faster with the <span className="text-gradient">essentials</span>.
             </h1>
             <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
