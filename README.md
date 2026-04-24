@@ -1,6 +1,6 @@
 # AWS EC2: Linux Server Deployment 🚀
 
-This branch showcases my ability to manage a Virtual Private Server (VPS). Instead of using automated tools, I manually configured a Linux environment to host my portfolio.
+This branch showcases my ability to manage a Virtual Private Server (VPS). Instead of using automated tools, I manually configured a Linux environment to host my DevOps Utility Belt web app.
 
 ## 🛠️ The "How-To" in Simple Terms
 
