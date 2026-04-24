@@ -1,6 +1,6 @@
 # AWS S3: Cloud-Native Static Hosting 🚀
 
-This branch demonstrates a Serverless approach to web hosting. Instead of using a virtual machine, I used AWS S3 to host my portfolio as a high-performance static website.
+This branch demonstrates a Serverless approach to web hosting. Instead of using a virtual machine, I used AWS S3 to host my DevOps Utility Belt web app as a high-performance static website.
 
 ## 🛠️ The "How-To" in Simple Terms
 
