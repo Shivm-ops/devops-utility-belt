@@ -1,85 +1,44 @@
-# Multi-Cloud DevOps Portfolio Deployment 🚀
+# AWS CloudFront CDN Deployment 🌍
 
-Welcome to the Multi-Cloud DevOps Portfolio Deployment project! This repository contains a responsive React/Vite Single Page Application (SPA) that acts as a personal portfolio and landing page.
+Welcome to the CloudFront deployment branch of the DevOps Utility Belt portfolio! This branch focuses on the Content Delivery Network (CDN) infrastructure, demonstrating how to globally distribute a React/Vite Single Page Application (SPA) using Amazon CloudFront.
 
-The core objective of this project is to demonstrate advanced **DevOps, CI/CD, and Cloud Infrastructure** concepts by deploying this exact same static website across multiple distinct hosting platforms and cloud providers.
+## 🏗️ Architecture & Deployment Strategy
 
-## 🎯 Project Goals & Architecture
+To achieve enterprise-grade performance and high availability, this architecture leverages **AWS CloudFront** in front of our web origin (S3 bucket or ELB). CloudFront aggressively caches static assets (HTML, CSS, JS, Images) at AWS Edge Locations all around the world.
 
-This project proves the ability to handle modern frontend architectures and deploy them securely and efficiently across varied environments:
+By offloading request processing to the CDN, we ensure that users download the portfolio from a data center physically closest to them, drastically reducing latency and improving the User Experience (UX).
 
-1. **Vercel & Netlify**: Modern serverless PaaS deployments with automated CI/CD directly from GitHub.
-2. **GitHub Pages**: Native repository-based hosting using GitHub Actions workflows.
-3. **AWS S3 + CloudFront**: Enterprise-grade static site hosting using an object storage bucket fronted by a global CDN.
-4. **AWS EC2 + Nginx**: Traditional Virtual Machine hosting, manually configured with a web server and SSL.
+## 🌍 CloudFront Distribution Configuration
 
-### High-Level Architecture
+The CloudFront distribution is configured to intercept all web traffic and route it efficiently.
 
-```text
-                     [ Developer pushes code ]
-                                |
-                                v
-                        [ GitHub Repository ]
-                                |
-        +-----------------------+-----------------------+
-        |                       |                       |
-        v                       v                       v
-[ GitHub Actions ]       [ Netlify CI/CD ]       [ Vercel CI/CD ]
-        |                       |                       |
-        v                       v                       v
- ( Build `dist/` )       ( Build `dist/` )       ( Build `dist/` )
-        |                       |                       |
-        v                       v                       v
-[ GitHub Pages ]          [ Netlify CDN ]         [ Vercel Edge ]
-                                |
-                                v
-                 [ DNS Provider (GoDaddy/Namecheap) ]
-                 - CNAME: portfolio.domain.com
-                 - CNAME: www.domain.com
-                 - A Record: (EC2 IP)
-```
+![CloudFront Distribution Overview](public/Cloudfront.png)
+*Figure 1: The CloudFront distribution showing the assigned domain name and its active deployment state, serving as the global entry point for the application.*
 
-## 🛠️ Tech Stack
+![CloudFront General Settings](public/CF%20general.png)
+*Figure 2: The general configuration of the distribution, illustrating the setup for edge caching, pricing class selection, and optimized content delivery.*
 
-- **Frontend**: React, Vite, TypeScript, Tailwind CSS, shadcn/ui
-- **Cloud Providers**: AWS (EC2, S3, CloudFront), Vercel, Netlify, GitHub Pages
-- **Web Server**: Nginx
-- **Security**: Let's Encrypt / Certbot (SSL/TLS)
-- **CI/CD**: GitHub Actions, Webhooks
+## 🔒 Security & Optimization
 
-## 🚀 Running Locally
+Integrating CloudFront brings several out-of-the-box DevOps and Security benefits:
 
-1. Install dependencies:
-   ```bash
-   npm install
-   # or
-   bun install
-   ```
+- **SSL/TLS Offloading:** Custom SSL certificates via AWS Certificate Manager (ACM) are attached directly to the distribution to enforce HTTPS natively.
+- **Origin Access Control (OAC):** Secures the underlying origin by restricting direct access—the application can only be reached *through* the CDN.
+- **DDoS Protection:** Implicitly protected by AWS Shield Standard at the edge, mitigating volumetric and state-exhaustion attacks before they reach the origin.
 
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
+## 📈 Results & Impact
 
-3. Build for production (creates the `dist/` folder):
-   ```bash
-   npm run build
-   ```
+Implementing a CDN-first approach yields massive architectural benefits:
 
-## 🌍 Deployment Environments
+- **Global Low Latency:** Time-to-First-Byte (TTFB) is minimized worldwide since content is served from the closest edge location.
+- **Extreme Cost-Efficiency:** Caching assets at the edge significantly reduces the number of requests and data transfer out of the origin storage, slashing infrastructure costs.
+- **Infinite Scalability:** CloudFront naturally scales to handle massive traffic spikes without any manual intervention or origin scaling required.
 
-This project is actively configured or designed to be deployed across:
+## 🌐 Live Environment
 
-- **Netlify/Vercel**: Simply connect this repo to the dashboard, and it automatically handles the `npm run build` and hosting.
-- **AWS S3**: The `dist/` contents are synced to an S3 bucket with static web hosting enabled.
-- **AWS EC2**: The `dist/` contents are served via an Nginx block with Certbot SSL termination.
+Check out the globally accelerated static portfolio here:
 
-## 🔒 Security & Best Practices
-
-- **Principle of Least Privilege**: IAM roles restricted to minimal permissions for AWS S3/CloudFront.
-- **Encryption in Transit**: Strict HTTPS enforcement via Let's Encrypt (EC2) and managed certificates (Vercel/Netlify/S3).
-- **Immutability**: The build artifacts inside `dist/` are treated as immutable and automatically replaced per deployment.
-- **Performance**: Heavy utilization of CloudFront and Edge CDNs to cache assets close to the user.
+👉 **[Insert CloudFront Live Link Here]**
 
 ---
-*Developed as a showcase for a DevOps Engineering portfolio.*
+*Developed as a technical showcase of cloud-native networking, content delivery, and AWS proficiency.*
