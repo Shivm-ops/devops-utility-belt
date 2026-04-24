@@ -2,7 +2,7 @@
 
 This branch demonstrates a production-grade deployment using a CDN (Content Delivery Network). It ensures the DevOps Utility Belt web app is fast for users anywhere in the world by caching it at the "Edge."
 
-## 🛠️ The "How-To" in Simple Terms
+## 🛠️ Deployment Steps
 
 *   **The Distribution:** I created a CloudFront Distribution to act as a global gateway.
 *   **The Origin:** I linked it to my S3 bucket but kept the bucket private for better security.
