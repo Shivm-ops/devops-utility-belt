@@ -28,10 +28,6 @@ Accessing the site through the server's direct IP address.
 *   **Nginx Mastery:** Configured routing and reverse proxy settings.
 *   **Cloud Networking:** Managed AWS Security Groups and Public IPs.
 
----
 
-## 🔗 View Live EC2 Deployment
-👉 **[Insert Live EC2 Link Here]**
-
----
 *Developed as a technical showcase of server management and AWS infrastructure.*
+
