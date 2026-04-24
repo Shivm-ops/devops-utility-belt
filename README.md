@@ -1,6 +1,6 @@
 # AWS CloudFront: Global Content Delivery (CDN) 🌍
 
-This branch demonstrates a production-grade deployment using a CDN (Content Delivery Network). It ensures the portfolio is fast for users anywhere in the world by caching it at the "Edge."
+This branch demonstrates a production-grade deployment using a CDN (Content Delivery Network). It ensures the DevOps Utility Belt web app is fast for users anywhere in the world by caching it at the "Edge."
 
 ## 🛠️ The "How-To" in Simple Terms
 
