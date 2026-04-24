@@ -1,51 +1,37 @@
-# AWS EC2 Virtual Private Server Deployment 🚀
+# AWS EC2: Linux Server Deployment 🚀
 
-Welcome to the EC2 deployment branch of the DevOps Utility Belt portfolio! This branch demonstrates a traditional Infrastructure-as-a-Service (IaaS) approach, hosting a React/Vite Single Page Application (SPA) on a virtual Linux server.
+This branch showcases my ability to manage a Virtual Private Server (VPS). Instead of using automated tools, I manually configured a Linux environment to host my portfolio.
 
-## 🏗️ Architecture & Deployment Strategy
+## 🛠️ The "How-To" in Simple Terms
 
-Unlike serverless options, this deployment utilizes an **Amazon EC2 (Elastic Compute Cloud)** instance. This approach provides full control over the operating system, web server configuration, and networking environment.
+*   **The Server:** I launched an Ubuntu EC2 instance on AWS.
+*   **The Web Server:** I installed and configured Nginx to serve my React build files.
+*   **The Networking:** I opened specific "Security Group" doors (Port 80/443) so the world can see my site.
 
-The deployment process involves:
-1. Provisioning a Linux-based EC2 instance (e.g., Ubuntu/Amazon Linux).
-2. Configuring Security Groups to allow inbound traffic on ports 80 (HTTP) and 443 (HTTPS).
-3. Installing dependencies (Node.js, Nginx, Git).
-4. Cloning the repository and building the static assets.
-5. Configuring **Nginx** as a high-performance web server to serve the build artifacts.
+## 📸 Deployment Proofs
 
-## 🖥️ Server Configuration & Deployment
+### 1. The Setup
+I cloned my code directly onto the server and built it using Node.js.
+![The Setup](public/clone.png)
 
-The deployment lifecycle is managed directly on the virtual machine, allowing for deep customization of the hosting environment.
+### 2. The Infrastructure
+My active instance running in the AWS Cloud.
+![The Infrastructure](public/EC2%20direct.png)
 
-![Repository Cloning & Build](public/clone.png)
-*Figure 1: The process of cloning the repository and preparing the build environment directly on the EC2 instance.*
+### 3. The Live Result
+Accessing the site through the server's direct IP address.
+![The Live Result](public/direct.png)
 
-![EC2 Instance Console](public/EC2%20direct.png)
-*Figure 2: The AWS Management Console showing the active EC2 instance running the portfolio application.*
+## 🎯 Key Skills Demonstrated
 
-![Live Site Access](public/direct.png)
-*Figure 3: Accessing the application directly via the EC2 instance's Public IPv4 address or DNS name.*
-
-## 🔒 Security & Best Practices
-
-- **Security Groups:** Implemented "Least Privilege" by only opening essential ports (SSH, HTTP, HTTPS).
-- **Web Server Optimization:** Nginx is configured for optimal performance, handling static file serving efficiently.
-- **Process Management:** Ensuring the server environment is stable and resilient.
-
-## 📈 Results & Impact
-
-Deploying on EC2 showcases critical "Traditional DevOps" skills:
-
-- **Full Environment Control:** Ability to customize the OS, kernel settings, and web server modules to meet specific application requirements.
-- **Troubleshooting Proficiency:** Direct access to server logs (Nginx access/error logs, system logs) for deep debugging.
-- **Hybrid Cloud Ready:** Skills that translate directly to on-premise servers or other cloud providers' VM services.
-- **Scalability:** The instance can be vertically scaled (Instance Type upgrade) or horizontally scaled using Auto Scaling Groups and Load Balancers.
-
-## 🌐 Live Environment
-
-Check out the EC2-hosted portfolio here:
-
-👉 **[Insert EC2 Instance Live Link Here]**
+*   **Linux Terminal:** Comfortable with SSH and command-line management.
+*   **Nginx Mastery:** Configured routing and reverse proxy settings.
+*   **Cloud Networking:** Managed AWS Security Groups and Public IPs.
 
 ---
-*Developed as a technical showcase of traditional server management, Nginx configuration, and AWS proficiency.*
+
+## 🔗 View Live EC2 Deployment
+👉 **[Insert Live EC2 Link Here]**
+
+---
+*Developed as a technical showcase of server management and AWS infrastructure.*
