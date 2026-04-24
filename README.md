@@ -2,7 +2,7 @@
 
 This branch showcases my ability to manage a Virtual Private Server (VPS). Instead of using automated tools, I manually configured a Linux environment to host my DevOps Utility Belt web app.
 
-## 🛠️ The "How-To" in Simple Terms
+## 🛠️ Deployment Steps
 
 *   **The Server:** I launched an Ubuntu EC2 instance on AWS.
 *   **The Web Server:** I installed and configured Nginx to serve my React build files.
