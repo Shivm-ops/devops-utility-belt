@@ -25,9 +25,4 @@ My custom JSON policy that grants `s3:GetObject` permission to the world.
 *   **Cost Optimization:** Achieved 99% lower hosting costs compared to using a traditional server.
 
 ---
-
-## 🔗 View Live S3 Deployment
-👉 **[Insert Live S3 Link Here]**
-
----
 *Developed as a technical showcase of cloud-native deployment and AWS S3 proficiency.*
