@@ -15,14 +15,14 @@ The deployment process involves:
 
 The fundamental storage unit for this deployment is an AWS S3 bucket. All production-ready assets (HTML, CSS, JS, and media) from the local build process are synchronized to this bucket.
 
-![S3 Bucket Contents - Uploaded Dist Files](Deploy-S3/S3%20bucket.png)
+![S3 Bucket Contents - Uploaded Dist Files](public/S3%20bucket.png)
 *Figure 1: The S3 bucket console showing the uploaded static assets from the `dist/` directory, serving as the foundation for the static website.*
 
 ## 🔒 Security & IAM: Bucket Policy
 
 To serve the application to the public while maintaining a strong security posture, the bucket requires a specific JSON policy. This policy explicitly grants read-only access (`s3:GetObject`) to the required principals, ensuring users can load the website without having write or list permissions. 
 
-![S3 JSON Bucket Policy](Deploy-S3/S3%20policy.png)
+![S3 JSON Bucket Policy](public/S3%20policy.png)
 *Figure 2: The JSON bucket policy attached to the S3 bucket. This demonstrates the `Allow` effect for the `s3:GetObject` action to establish public read access (securely scoped to CloudFront origin access in enterprise deployments).*
 
 ## 📈 Results & Impact
